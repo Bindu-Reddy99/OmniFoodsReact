@@ -1,5 +1,4 @@
 import React from 'react';
-import ScrollableAnchor from 'react-scrollable-anchor';
 import {Animated} from "react-animated-css";
 
 import CityItem from './CityItem/CityItem';
@@ -10,9 +9,9 @@ import berlin from '../../assets/img/berlin-min.jpg';
 import london from '../../assets/img/london-min.jpg';
 
 
-const cities={
+const cities=[
 
-    Lisbon: {
+   {
         cityName: 'Lisbon',
         img: lisbon,
         customerIcon: 'person',
@@ -22,7 +21,7 @@ const cities={
         chefs: '60+ top chefs',
         twitterHandle: '@omnifood_lx'
     },
-    SanFrancisco: {
+   {
         cityName: 'San Francisco',
         img: sanfrancisco,
         customerIcon: 'person',
@@ -32,7 +31,7 @@ const cities={
         chefs: '160+ top chefs',
         twitterHandle: '@omnifood_sf'
     },
-    Berlin: {
+  {
         cityName: 'Berlin',
         img: berlin,
         customerIcon: 'person',
@@ -42,7 +41,7 @@ const cities={
         chefs: '110+ top chefs',
         twitterHandle: '@omnifood_berlin'
     },
-    London: {
+ {
         cityName: 'London',
         img: london,
         customerIcon: 'person',
@@ -52,42 +51,37 @@ const cities={
         chefs: '50+ top chefs',
         twitterHandle: '@omnifood_london'
     }
-}
+]
 
-const cityShow = () => {
-    let cityArray = [];
-    for(let city in cities) {
-        cityArray.push((
-            <CityItem 
-                key={cities[city].cityName} 
-                img={cities[city].img} 
-                alt={cities[city].cityName} 
-                city={cities[city].cityName} 
-                customerIcon={cities[city].customerIcon} 
-                customers={cities[city].customers} 
-                chefIcon={cities[city].chefIcon} 
-                chefs={cities[city].chefs} 
-                socialMediaIcon={cities[city].socialMediaIcon} 
-                twitterHandle={cities[city].twitterHandle}
-            />
-        ));
-    }
-    return cityArray;
-}
+
 const Cities = props => {
     return (
-        <ScrollableAnchor id={'cities'}>
+      
             <Animated animationIn="fadeIn" isVisible={props.cityFade}>    
             <section className="section-cities">
                     <div className="row">
                         <h2>We're currently in these cities</h2>
                     </div>
                     <div className="row">
-                        {cityShow()}
+                     {cities.map((city)=>(
+                         <CityItem
+                         key={city.cityName} 
+                         img={city.img} 
+                         alt={city.cityName} 
+                         city={city.cityName} 
+                         customerIcon={city.customerIcon} 
+                         customers={city.customers} 
+                         chefIcon={city.chefIcon} 
+                         chefs={city.chefs} 
+                         socialMediaIcon={city.socialMediaIcon} 
+                         twitterHandle={city.twitterHandle}
+                         />
+                     ))}
+                        {/* {cityShow()} */}
                     </div>
                 </section>
             </Animated>
-        </ScrollableAnchor>
+       
     );
 }
 

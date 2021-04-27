@@ -6,12 +6,12 @@ import Input from './Input'
  
   const  signUpForm ={
       name: {
-        inputTypee: "input",
+        inputType: "input",
         label: "Name",
         type: "text",
         name: "name",
         id: "name",
-        value: "",
+       
         placeholder: "Your Name",
         required: true,
       },
@@ -21,7 +21,7 @@ import Input from './Input'
         type: "email",
         name: "email",
         id: "email",
-        value: "",
+       
         placeholder: "Your Email",
         required: true,
       },
@@ -30,7 +30,7 @@ import Input from './Input'
         label: "How did you find us?",
         name: "find-us",
         id: "find-us",
-        value: "friends",
+       
         options: {
           option1: {
             value: "friends",
@@ -55,29 +55,25 @@ import Input from './Input'
         label: "Newsletter?",
         type: "checkbox",
         name: "newsletter",
-        textAfter: "Yes, please",
-        value: true,
+        textAfter: "Yes  please",
+        value: "true",
       },
       message: {
         inputType: "textarea",
         label: "Drop us a line",
         name: "message",
         id: "message",
-        value: "",
+     
         required: true,
         placeholder: "Your Message",
-        validation: {
-          required: true,
-        },
+       
       },
       submit: {
         inputType: "input",
         type: "submit",
-        label: "\u00A0",
+   
         value: "Send it!",
-        validation: {
-          required: false,
-        },
+      
       },
     },
 

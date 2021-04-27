@@ -1,6 +1,4 @@
 import React from 'react';
-import ScrollableAnchor from 'react-scrollable-anchor';
-
 import PriceItem from './PriceItem/PriceItem';
 
 
@@ -100,7 +98,7 @@ const planList = (pricePulse) => {
 }
 
 const Pricing = props => (
-    <ScrollableAnchor id={'pricing'}>
+   
         <section className="section-pricing">
             <div className="row">
                 <h2>Start eating healthy today</h2>
@@ -109,7 +107,7 @@ const Pricing = props => (
                 {planList(props.pricePulse)}
             </div>
         </section>
-    </ScrollableAnchor>
+   
 );
 
 export default Pricing;

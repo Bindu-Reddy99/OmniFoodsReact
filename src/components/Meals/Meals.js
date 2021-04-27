@@ -11,59 +11,56 @@ import img6 from "../../assets/img/6-min.jpg";
 import img7 from "../../assets/img/7-min.jpg";
 import img8 from "../../assets/img/8-min.jpg";
 
-const meals = {
-  meal1: {
-    imageName: img1,
-    imageAlt: "Korean bibimbap with egg and vegetables",
+const meals = [
+  {
+    image_url: img1,
+    alt: "Korean bibimbap with egg and vegetables",
   },
-  meal2: {
-    imageName: img2,
-    imageAlt: "Simple italian pizza with cherry tomatoes",
+  {
+    image_url: img2,
+    alt: "Simple italian pizza with cherry tomatoes",
   },
-  meal3: {
-    imageName: img3,
-    imageAlt: "Chicken breast steak with vegetables",
+  {
+    image_url: img3,
+    alt: "Chicken breast steak with vegetables",
   },
-  meal4: {
-    imageName: img4,
-    imageAlt: "Autumn pumpkin soup",
+  {
+    image_url: img4,
+    alt: "Autumn pumpkin soup",
   },
-  meal5: {
-    imageName: img5,
-    imageAlt: "Paleo beef steak with vegetables",
+  {
+    image_url: img5,
+    alt: "Paleo beef steak with vegetables",
   },
-  meal6: {
-    imageName: img6,
-    imageAlt: "Healthy baguette with egg and vegetables",
+  {
+    image_url: img6,
+    alt: "Healthy baguette with egg and vegetables",
   },
-  meal7: {
-    imageName: img7,
-    imageAlt: "Burger with cheddar and bacon",
+  {
+    image_url: img7,
+    alt: "Burger with cheddar and bacon",
   },
-  meal8: {
-    imageName: img8,
-    imageAlt: "Granola with cherries and strawberries",
+  {
+    image_url: img8,
+    alt: "Granola with cherries and strawberries",
   },
-};
+];
 
-const groupMealList = () => {
-  let newMealList = [];
-  for (const meal in meals) {
-    newMealList.push(
-      <Meal
-        // key={meals[meal].imageName}
-        img={meals[meal].imageName}
-        alt={meals[meal].imageAlt}
-      />
-    );
-  }
-  return newMealList;
-};
+
 
 const Meals = (props) => {
   return (
     <section className="section-meals">
-      <ul className="meals-showcase clearfix">{groupMealList()}</ul>
+      <ul className="meals-showcase clearfix">
+        {/* {groupMealList()} */}
+       {/* <div>Hi</div> */}
+        {meals.map((meal) => (
+          <Meal
+          img={meal.image_url}
+          alt={meal.alt}
+          />
+        ))}
+      </ul>
     </section>
   );
 };

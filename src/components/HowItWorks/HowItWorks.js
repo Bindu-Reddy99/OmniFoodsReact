@@ -1,5 +1,4 @@
 import React from 'react';
-import ScrollableAnchor from 'react-scrollable-anchor';
 import {Animated} from "react-animated-css";
 
 import './HowItWorks.css';
@@ -9,7 +8,7 @@ import playStore from '../../assets/img/download-app-android-min.png';
 
 const Steps = props => {
     return (
-        <ScrollableAnchor id={'steps'}>
+      
             <section className="section-steps">
                 <div className="row">
                     <h2>How it works &mdash; Simple as 1, 2, 3</h2>
@@ -42,7 +41,7 @@ const Steps = props => {
                     </div>
                 </div>
             </section>
-        </ScrollableAnchor>
+   
     );
 }
 
